@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloapp-deployment
+  labels:
+    app: helloapp
+    type: frontend
+
+spec:
+  template:
+    metadata:
+      name: helloapp-pod
+      labels:
+         app: helloapp
+
+    spec:
+       containers:
+        - name: helloworld-container
+          image: chejunior/hello-world-docker-boot:manual3
+
+  replicas: 3
+  
+  selector:
+    matchLabels:
+      app: helloapp

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: first-pod
+  labels:
+    app: myapp
+    type: frontend
+
+spec:
+  containers:
+    - name: nodejs
+      image: quay.io/kubernetes-for-developers/nodejs:0.2.0

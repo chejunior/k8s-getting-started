@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+    app: myapp
+    type: frontend
+
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+         app: myapp
+
+    spec:
+       containers:
+        - name: nodejs
+          image: quay.io/kubernetes-for-developers/nodejs:0.2.0
+
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp

@@ -16,7 +16,7 @@ spec:
     spec:
        containers:
         - name: helloworld-container
-          image: chejunior/hello-world-docker-boot:manual3
+          image: nginx:latest
 
   replicas: 3
   
